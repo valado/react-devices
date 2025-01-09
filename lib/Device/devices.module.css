@@ -1,0 +1,245 @@
+:root {
+  --color-border-color: #edf4f8;
+  --color-phone-bg-color: #fff;
+  --color-jacks-bg-color: #e3e8eb;
+  --color-x-dark-bg: #181715;
+  --scaling: 0.65;
+  --phone-width: calc(375px * var(--scaling));
+  --border-radius: calc(40px * var(--scaling));
+  --border-width: calc(15px * var(--scaling));
+  --notch-border-radius: calc(20px * var(--scaling));
+  --notch-width: calc(209px * var(--scaling));
+  --notch-height: calc(35px * var(--scaling));
+  --light-bg: #fff;
+  --browser-action-size: 0.5em;
+  --browser-action-color-1: #6a52fc;
+  --browser-action-color-2: #d3d4d5;
+  --browser-action-color-3: #1fffad;
+}
+.iphone,
+.iphone-x,
+.ipad {
+  border: 1px solid var(--color-border-color);
+  margin: 0 auto;
+  position: relative;
+}
+.iphone:before,
+.iphone-x:before,
+.ipad:before,
+.iphone:after,
+.iphone-x:after,
+.ipad:after {
+  content: "";
+  position: absolute;
+}
+.iphone:before,
+.iphone-x:before,
+.ipad:before {
+  width: 45px;
+  height: 4px;
+  left: 0;
+  right: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 30px;
+}
+.iphone:after,
+.iphone-x:after,
+.ipad:after {
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.03);
+  display: block;
+  border-radius: 50%;
+}
+.iphone .screen,
+.iphone-x .screen,
+.ipad .screen {
+  margin: 0 auto;
+}
+.iphone .screen img,
+.iphone-x .screen img,
+.ipad .screen img {
+  max-width: 100%;
+}
+.iphone,
+.ipad {
+  background: var(--color-phone-bg-color);
+  max-width: 255px;
+  border-radius: 36px;
+  padding: 55px 0;
+  box-shadow: inset 0 4px 10px 1px var(--color-phone-bg-color),
+    inset 0 0 6px 0 rgba(66, 77, 86, 0.5), 0 2px 0 #aeb5bb,
+    0 20px 50px -25px rgba(0, 0, 0, 0.5);
+  /* speaker */
+  /* camera */
+}
+.iphone:before,
+.ipad:before {
+  background: var(--color-jacks-bg-color);
+  margin: -25px auto 0;
+}
+.iphone:after,
+.ipad:after {
+  top: 30px;
+  margin-left: -45px;
+  background: var(--color-jacks-bg-color);
+}
+.iphone .screen,
+.ipad .screen {
+  width: 90%;
+}
+.iphone .screen img,
+.ipad .screen img {
+  box-shadow: 0 0 0 1px rgba(0, 17, 53, 0.16);
+}
+.iphone .button,
+.ipad .button {
+  box-shadow: 0 0 1px 2px var(--color-jacks-bg-color) inset;
+  border: 1px solid var(--color-border-color);
+  border-radius: 50%;
+  bottom: 1.75%;
+  height: 0;
+  padding-top: 36px;
+  width: 36px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.iphone.small,
+.ipad.small {
+  max-width: 185px;
+  border-radius: 26px;
+  padding: 45px 0;
+}
+.iphone.small:before,
+.ipad.small:before {
+  width: 35px;
+}
+.iphone.small:after,
+.ipad.small:after {
+  top: 20px;
+}
+.iphone.small .button,
+.ipad.small .button {
+  width: 28px;
+  padding-top: 28px;
+  margin-left: -8px;
+}
+.iphone.landscape,
+.ipad.landscape {
+  padding: 1rem 3rem;
+}
+.iphone.landscape:before,
+.ipad.landscape:before,
+.iphone.landscape:after,
+.ipad.landscape:after {
+  left: 16%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.iphone.landscape .button,
+.ipad.landscape .button {
+  left: 100%;
+  margin-left: -50px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.ipad:before {
+  content: none;
+}
+.ipad.portrait:after {
+  margin-left: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.iphone-x {
+  background: var(--color-x-dark-bg);
+  max-width: var(--phone-width);
+  border-radius: var(--border-radius);
+  padding: var(--border-width);
+  box-shadow: 0 1px 0 #aeb5bb, 0 20px 50px -25px rgba(0, 0, 0, 0.5);
+  /* speaker */
+  /* camera */
+}
+.iphone-x:before,
+.iphone-x:after {
+  background-color: #292724;
+  z-index: 1;
+}
+.iphone-x:before {
+  margin: 0 auto;
+}
+.iphone-x:after {
+  top: 8px;
+  margin-left: 33px;
+}
+.iphone-x .screen {
+  border-radius: var(--border-radius) / 2;
+  overflow: hidden;
+}
+.iphone-x .screen img {
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.015);
+}
+.iphone-x .notch {
+  position: absolute;
+  border-radius: var(--notch-border-radius);
+  width: var(--notch-width);
+  height: var(--notch-height);
+  transform: translateX(-50%);
+  background-color: var(--color-x-dark-bg);
+  top: 0;
+  left: 50%;
+}
+.iphone-x.light {
+  background-color: var(--light-bg);
+}
+.iphone-x.light .notch {
+  background-color: var(--light-bg);
+}
+.iphone-x.light:before,
+.iphone-x.light:after {
+  background-color: var(--color-jacks-bg-color);
+}
+.browser {
+  background: linear-gradient(#fff 1%, #fafafa 10%);
+  position: relative;
+  padding-top: 2em;
+  border-radius: 0.4em;
+}
+.browser:before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0.75em;
+  left: 1em;
+  width: var(--browser-action-size);
+  height: var(--browser-action-size);
+  border-radius: 50%;
+  background: var(--browser-action-color-1);
+  box-shadow: 0 0 0 1px var(--browser-action-color-1),
+    1.5em 0 0 1px var(--browser-action-color-2),
+    3em 0 0 1px var(--browser-action-color-3);
+}
+.browser img {
+  max-width: 100%;
+}
+.browser.shadow {
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.09);
+}
+.browser.border {
+  border: 1px solid var(--color-border-color);
+}
+.fade-bottom:after {
+  background: linear-gradient(rgba(255, 255, 255, 0), #fff 70%, #fff);
+  bottom: -25px;
+  content: "";
+  display: block;
+  height: 85px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}
