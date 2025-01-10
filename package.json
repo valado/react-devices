@@ -1,9 +1,9 @@
 {
-  "name": "react-devices",
+  "name": "react-device-frames",
   "private": false,
   "version": "1.0.0",
   "type": "module",
-  "main": "dist/react-devices.js",
+  "main": "dist/react-device-frames.js",
   "types": "dist/main.d.ts",
   "files": [
     "dist"
