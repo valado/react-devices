@@ -4,37 +4,36 @@
   --color-jacks-bg-color: #e3e8eb;
   --color-x-dark-bg: #181715;
   --scaling: 0.65;
-  --phone-width: calc(375px * var(--scaling));
-  --border-radius: calc(40px * var(--scaling));
-  --border-width: calc(15px * var(--scaling));
-  --notch-border-radius: calc(20px * var(--scaling));
-  --notch-width: calc(209px * var(--scaling));
-  --notch-height: calc(35px * var(--scaling));
+  --phone-width: 375px;
+  --border-radius: 40px;
+  --border-width: 15px;
+  --notch-border-radius: 20px;
+  --notch-width: 209px;
+  --notch-height: 35px;
   --light-bg: #fff;
   --browser-action-size: 0.5em;
   --browser-action-color-1: #6a52fc;
   --browser-action-color-2: #d3d4d5;
   --browser-action-color-3: #1fffad;
 }
-.iphone,
-.iphone-x,
-.ipad {
+
+.phone,
+.tablet {
   border: 1px solid var(--color-border-color);
   margin: 0 auto;
   position: relative;
 }
-.iphone:before,
-.iphone-x:before,
-.ipad:before,
-.iphone:after,
-.iphone-x:after,
-.ipad:after {
+
+.phone:before,
+.tablet:before,
+.phone:after,
+.tablet:after {
   content: "";
   position: absolute;
 }
-.iphone:before,
-.iphone-x:before,
-.ipad:before {
+
+.phone:before,
+.tablet:before {
   width: 45px;
   height: 4px;
   left: 0;
@@ -42,9 +41,9 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   border-radius: 30px;
 }
-.iphone:after,
-.iphone-x:after,
-.ipad:after {
+
+.phone:after,
+.tablet:after {
   left: 50%;
   width: 8px;
   height: 8px;
@@ -52,18 +51,18 @@
   display: block;
   border-radius: 50%;
 }
-.iphone .screen,
-.iphone-x .screen,
-.ipad .screen {
+
+.phone .screen,
+.tablet .screen {
   margin: 0 auto;
 }
-.iphone .screen img,
-.iphone-x .screen img,
-.ipad .screen img {
+
+.phone .screen img,
+.tablet .screen img {
   max-width: 100%;
 }
-.iphone,
-.ipad {
+
+.tablet {
   background: var(--color-phone-bg-color);
   max-width: 255px;
   border-radius: 36px;
@@ -74,27 +73,27 @@
   /* speaker */
   /* camera */
 }
-.iphone:before,
-.ipad:before {
+
+.tablet:before {
   background: var(--color-jacks-bg-color);
   margin: -25px auto 0;
 }
-.iphone:after,
-.ipad:after {
+
+.tablet:after {
   top: 30px;
   margin-left: -45px;
   background: var(--color-jacks-bg-color);
 }
-.iphone .screen,
-.ipad .screen {
+
+.tablet .screen {
   width: 90%;
 }
-.iphone .screen img,
-.ipad .screen img {
+
+.tablet .screen img {
   box-shadow: 0 0 0 1px rgba(0, 17, 53, 0.16);
 }
-.iphone .button,
-.ipad .button {
+
+.tablet .button {
   box-shadow: 0 0 1px 2px var(--color-jacks-bg-color) inset;
   border: 1px solid var(--color-border-color);
   border-radius: 50%;
@@ -106,102 +105,101 @@
   left: 50%;
   transform: translateX(-50%);
 }
-.iphone.small,
-.ipad.small {
+
+.tablet.small {
   max-width: 185px;
   border-radius: 26px;
   padding: 45px 0;
 }
-.iphone.small:before,
-.ipad.small:before {
+
+.tablet.small:before {
   width: 35px;
 }
-.iphone.small:after,
-.ipad.small:after {
+
+.tablet.small:after {
   top: 20px;
 }
-.iphone.small .button,
-.ipad.small .button {
+
+.tablet.small .button {
   width: 28px;
   padding-top: 28px;
   margin-left: -8px;
 }
-.iphone.landscape,
-.ipad.landscape {
+
+.tablet.landscape {
   padding: 1rem 3rem;
 }
-.iphone.landscape:before,
-.ipad.landscape:before,
-.iphone.landscape:after,
-.ipad.landscape:after {
+
+.tablet.landscape:before,
+.tablet.landscape:after {
   left: 16%;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.iphone.landscape .button,
-.ipad.landscape .button {
+
+.tablet.landscape .button {
   left: 100%;
   margin-left: -50px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
-.ipad:before {
+.tablet:before {
   content: none;
 }
-.ipad.portrait:after {
+.tablet.portrait:after {
   margin-left: 0;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-.iphone-x {
+.phone {
   background: var(--color-x-dark-bg);
-  max-width: var(--phone-width);
-  border-radius: var(--border-radius);
-  padding: var(--border-width);
+  max-width: calc(var(--phone-width) * var(--scaling));
+  border-radius: calc(var(--border-radius) * var(--scaling));
+  padding: calc(var(--border-width) * var(--scaling));
   box-shadow: 0 1px 0 #aeb5bb, 0 20px 50px -25px rgba(0, 0, 0, 0.5);
   /* speaker */
   /* camera */
 }
-.iphone-x:before,
-.iphone-x:after {
+.phone:before,
+.phone:after {
   background-color: #292724;
   z-index: 1;
 }
-.iphone-x:before {
+.phone:before {
   margin: 0 auto;
 }
-.iphone-x:after {
+.phone:after {
   top: 8px;
   margin-left: 33px;
 }
-.iphone-x .screen {
-  border-radius: var(--border-radius) / 2;
+.phone .screen {
+  border-radius: calc(calc(var(--border-radius) * var(--scaling)) / 2);
   overflow: hidden;
 }
-.iphone-x .screen img {
+.phone .screen img {
   box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.015);
 }
-.iphone-x .notch {
+.phone .notch {
   position: absolute;
-  border-radius: var(--notch-border-radius);
-  width: var(--notch-width);
-  height: var(--notch-height);
+  border-radius: calc(var(--notch-border-radius) * var(--scaling));
+  width: calc(var(--notch-width) * var(--scaling));
+  height: calc(var(--notch-height) * var(--scaling));
   transform: translateX(-50%);
   background-color: var(--color-x-dark-bg);
   top: 0;
   left: 50%;
 }
-.iphone-x.light {
+.phone.light {
   background-color: var(--light-bg);
 }
-.iphone-x.light .notch {
+.phone.light .notch {
   background-color: var(--light-bg);
 }
-.iphone-x.light:before,
-.iphone-x.light:after {
+.phone.light:before,
+.phone.light:after {
   background-color: var(--color-jacks-bg-color);
 }
 .browser {
@@ -209,6 +207,7 @@
   position: relative;
   padding-top: 2em;
   border-radius: 0.4em;
+  border: 1px solid var(--color-border-color);
 }
 .browser:before {
   display: block;
@@ -242,4 +241,138 @@
   left: 0;
   position: absolute;
   right: 0;
+}
+
+.screen {
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.screen img {
+  max-width: 100%;
+}
+
+.shadow {
+  box-shadow: 0 1px 0 #aeb5bb, 0 10px 20px -5px rgba(0, 0, 0, 0.5);
+}
+
+.growOnHover {
+  transition: 0.3s ease-in-out;
+}
+
+.growOnHover:hover {
+  transform: scale(1.05);
+}
+
+.laptop {
+  position: relative;
+  width: calc(600px * var(--scaling));
+  height: calc(400px * var(--scaling));
+  background: #dcdcdc;
+  border-radius: calc(10px * var(--scaling));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.laptopScreen {
+  top: calc(20px * var(--scaling));
+  left: calc(10px * var(--scaling));
+  width: calc(580px * var(--scaling));
+  height: calc(350px * var(--scaling));
+  border-radius: calc(6px * var(--scaling));
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.laptop::before {
+  content: "";
+  position: absolute;
+  top: calc(7px * var(--scaling));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(7px * var(--scaling));
+  height: calc(7px * var(--scaling));
+  background: #555;
+  border-radius: 50%;
+}
+
+.laptop::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(720px * var(--scaling));
+  height: calc(20px * var(--scaling));
+  background: #b0b0b0;
+  border-radius: 0 0 10px 10px;
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.laptopNotch {
+  content: "";
+  background-color: #a7a7a7;
+  position: absolute;
+  bottom: calc(10px * var(--scaling));
+  left: 50%;
+  z-index: 100;
+  transform: translateX(-50%);
+  width: calc(80px * var(--scaling));
+  height: calc(10px * var(--scaling));
+  border-radius: 0 0 5px 5px;
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.desktop {
+  position: relative;
+  width: calc(500px * var(--scaling));
+  height: calc(300px * var(--scaling));
+  background: #dcdcdc;
+  border-radius: calc(10px * var(--scaling));
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.desktop::before {
+  content: "";
+  position: absolute;
+  top: calc(3px * var(--scaling));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(5px * var(--scaling));
+  height: calc(5px * var(--scaling));
+  background: #555;
+  border-radius: 50%;
+}
+
+.dekstopScreen {
+  position: absolute;
+  top: calc(10px * var(--scaling));
+  left: calc(10px * var(--scaling));
+  width: calc(480px * var(--scaling));
+  height: calc(260px * var(--scaling));
+  background: #333;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.desktop::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-70px * var(--scaling));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(120px * var(--scaling));
+  height: calc(70px * var(--scaling));
+  background: #b0b0b0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.desktopNotch {
+  position: absolute;
+  bottom: calc(-80px * var(--scaling));
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(180px * var(--scaling));
+  height: calc(10px * var(--scaling));
+  background: #b0b0b0;
+  border-radius: calc(3px * var(--scaling));
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.3);
 }
