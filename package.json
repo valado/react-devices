@@ -3,7 +3,12 @@
   "private": false,
   "repository": "https://github.com/valado/react-devices",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.4",
+  "keywords": [
+    "react",
+    "devices",
+    "mockups"
+  ],
   "type": "module",
   "main": "dist/react-device-mockup-frames.js",
   "types": "dist/main.d.ts",
