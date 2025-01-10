@@ -16,16 +16,17 @@ export const Device: FC<Required<PropsWithChildren> & DeviceProps> = ({
   dropShadow,
   onClick,
   children,
-}) => (
-  <div
-    className={`${DEVICE_STYLE_MAP[device].main.join(" ")} ${
-      growOnHover ? styles.growOnHover : ""
-    } ${dropShadow ? styles.shadow : ""}`}
-    onClick={onClick}
-  >
-    <div className={styles.screen}>{children}</div>
-    {DEVICE_STYLE_MAP[device].notch && (
-      <div className={DEVICE_STYLE_MAP[device].notch} />
-    )}
-  </div>
-);
+}) => {
+  const deviceStyles = DEVICE_STYLE_MAP[device];
+  return (
+    <div
+      className={`${deviceStyles.main.join(" ")} ${
+        growOnHover ? styles.growOnHover : ""
+      } ${dropShadow ? styles.shadow : ""}`}
+      onClick={onClick}
+    >
+      <div className={deviceStyles.screen}>{children}</div>
+      {deviceStyles.notch && <div className={deviceStyles.notch} />}
+    </div>
+  );
+};

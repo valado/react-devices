@@ -3,7 +3,7 @@ import styles from "./devices.module.css";
 
 type Styles = {
   main: string[];
-  screen?: string;
+  screen: string;
   notch?: string;
 };
 

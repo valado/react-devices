@@ -3,6 +3,7 @@
   --color-phone-bg-color: #fff;
   --color-jacks-bg-color: #e3e8eb;
   --color-x-dark-bg: #181715;
+  --color-screen-background: #333;
   --scaling: 0.65;
   --phone-width: 375px;
   --border-radius: 40px;
@@ -64,8 +65,8 @@
 
 .tablet {
   background: var(--color-phone-bg-color);
-  max-width: 255px;
-  border-radius: 36px;
+  width: calc(600px * var(--scaling));
+  border-radius: calc(36px * var(--scaling));
   padding: 55px 0;
   box-shadow: inset 0 4px 10px 1px var(--color-phone-bg-color),
     inset 0 0 6px 0 rgba(66, 77, 86, 0.5), 0 2px 0 #aeb5bb,
@@ -81,7 +82,6 @@
 
 .tablet:after {
   top: 30px;
-  margin-left: -45px;
   background: var(--color-jacks-bg-color);
 }
 
@@ -127,12 +127,13 @@
 }
 
 .tablet.landscape {
+  width: calc(900px * var(--scaling));
   padding: 1rem 3rem;
 }
 
 .tablet.landscape:before,
 .tablet.landscape:after {
-  left: 16%;
+  left: calc(60px * var(--scaling));
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -274,6 +275,7 @@
 }
 
 .laptopScreen {
+  position: absolute;
   top: calc(20px * var(--scaling));
   left: calc(10px * var(--scaling));
   width: calc(580px * var(--scaling));
@@ -281,6 +283,7 @@
   border-radius: calc(6px * var(--scaling));
   box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  background-color: var(--color-screen-background);
 }
 
 .laptop::before {
@@ -343,14 +346,15 @@
   border-radius: 50%;
 }
 
-.dekstopScreen {
+.desktopScreen {
   position: absolute;
   top: calc(10px * var(--scaling));
   left: calc(10px * var(--scaling));
   width: calc(480px * var(--scaling));
   height: calc(260px * var(--scaling));
-  background: #333;
+  background-color: var(--color-screen-background);
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
 }
 
 .desktop::after {

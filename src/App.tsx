@@ -14,7 +14,6 @@ const Content: FC<{ label: string }> = ({ label }) => (
       fontWeight: "bold",
       display: "flex",
       justifyContent: "center",
-      alignItems: "center",
     }}
   >
     <div style={{ textAlign: "center" }}>
@@ -28,19 +27,16 @@ const App: FC = () => (
   <div
     style={{
       display: "flex",
-      gap: "10px",
+      gap: "30px 30px",
       flexWrap: "wrap",
-      width: "100vw",
-      maxWidth: "100%",
-      padding: "30px",
+      padding: "50px",
     }}
   >
     {Object.values(DeviceType).map((deviceType) => (
       <div
         key={deviceType}
         style={{
-          flex: "0.5 0.5",
-          margin: "10px",
+          flex: "1 1",
         }}
       >
         <Device device={deviceType as DeviceType} growOnHover>
